@@ -1,60 +1,33 @@
+#pragma once
 #include <iostream>
+#include <vector>
 using namespace std;
 
+#include "Point.hpp"
+#include "Character.hpp"
+#include "Ninja.hpp"
+#include "Cowboy.hpp"
+
 namespace ariel{
-
-    class Point{
-        double x;
-        double y;
-
-        public:
-            Point(double x1, double y1);
-            double distance(const Point& other) const;
-            void print();
-            Point moveTowards(Point& source, Point& dest, double dist);
-    };
-
-    class Character{
-        Point location_;
-        int hitPoints_;
-        string name_;
-        void hit(int hits);
-        double distance(const Character& other) const;
+    class Team{
+        vector <Character*> warriors();
+        Character* leader;
 
         public:
-           string getName() const;
-           Point getLocation() const;
-           virtual string print();
-           bool isAlive() const;
+            Team(Character* leader);
+            virtual void add(Character* mate);
+            void attack(Team* enemies);
+            int stillAlive();
+            void print() const;
+            ~Team();
     };
 
-    class Cowboy : public Character{
-        int Bullets;
-        bool hasBullets();
-        void reload();       
-        void shoot(Character* enemy);
-        public:
-           string print() override;
+    class Team2 : public Team{
+        void add(Character* mate) override;
     };
 
-    class Ninja : public Character{
-        const int speed;
-        void move(Character* enemy);
-        void slash(Character* enemy);
+    class SmartTeam : public Team{
+        void add(Character* mate) override;
     };
 
-    class YoungNinja : public Ninja{
-        public:     
-            YoungNinja();
-    };
-
-    class TrainedNinja : public Ninja{
-        public:     
-            TrainedNinja();
-    };
-
-    class OldNinja : public Ninja{
-        public:     
-            OldNinja();
-    };
 }
