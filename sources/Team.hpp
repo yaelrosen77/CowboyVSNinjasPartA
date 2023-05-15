@@ -29,5 +29,13 @@ namespace ariel{
     class SmartTeam : public Team{
         void add(Character* mate) override;
     };
+    
+    class Team1{
+
+    };
+
+    class SmartTeam{
+
+    };
 
 }

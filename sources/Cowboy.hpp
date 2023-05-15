@@ -6,7 +6,8 @@ using namespace std;
 namespace ariel{
 
     class Cowboy : public Character{
-        int Bullets;
+        Cowboy(Point& location, string& name);
+        int Bullets_;
         bool hasBullets();
         void reload();       
         void shoot(Character* enemy);

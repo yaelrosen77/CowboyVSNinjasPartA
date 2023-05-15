@@ -6,13 +6,15 @@ using namespace ariel;
 
 namespace ariel{
     class Character{
-        Point location_;
-        int hitPoints_;
-        string name_;
-        void hit(int hits);
-        double distance(const Character& other) const;
+        protected:
+            Point location_;
+            int hitPoints_;
+            string name_;
+            void hit(int hits);
+            double distance(const Character& other) const;
 
         public:
+           Character(Point& location, string& name);
            string getName() const;
            Point getLocation() const;
            virtual string print() = 0;

@@ -6,24 +6,27 @@ using namespace ariel;
 
 namespace ariel{
     class Ninja : public Character{
-        const int speed;
-        void move(Character* enemy);
-        void slash(Character* enemy);
+        protected: 
+            int speed;
+            void move(Character* enemy);
+            void slash(Character* enemy);
+        public: 
+            Ninja(Point& location, string& name);
     };
 
     class YoungNinja : public Ninja{
         public:     
-            YoungNinja();
+            YoungNinja(Point& location, string& name);
     };
 
     class TrainedNinja : public Ninja{
         public:     
-            TrainedNinja();
+            TrainedNinja(Point& location, string& name);
     };
 
     class OldNinja : public Ninja{
         public:     
-            OldNinja();
+            OldNinja(Point& location, string& name);
     };
 
 }
