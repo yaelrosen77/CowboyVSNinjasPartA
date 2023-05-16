@@ -4,25 +4,24 @@ using namespace ariel;
 void Ninja:: move(Character* enemy){
     return;
 }
-
 void Ninja:: slash(Character* enemy){
     return;
 }
+string Ninja::print(){
+    return name_;    
+}
+Ninja :: Ninja(string name, Point location):
+    Character(name, location){}
 
-Ninja :: Ninja(Point& location, string& name):
-    Character(location,name){}
-
-YoungNinja :: YoungNinja(Point& location, string& name):Ninja(location,name){
+YoungNinja :: YoungNinja(string name, Point location):Ninja(name,location){
     speed = 14;
     hitPoints_ = 100;
 }
-
-TrainedNinja :: TrainedNinja(Point& location, string& name):Ninja(location,name){
+TrainedNinja :: TrainedNinja(string name, Point location):Ninja(name,location){
     speed = 12;
     hitPoints_ = 120;
 }
-
-OldNinja :: OldNinja(Point& location, string& name):Ninja(location,name){
+OldNinja :: OldNinja(string name, Point location):Ninja(name,location){
     speed = 8;
     hitPoints_ = 150;
 }

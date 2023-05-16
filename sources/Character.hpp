@@ -14,11 +14,12 @@ namespace ariel{
             double distance(const Character& other) const;
 
         public:
-           Character(Point& location, string& name);
+           Character(string name, Point location);
            string getName() const;
            Point getLocation() const;
            virtual string print() = 0;
            bool isAlive() const;
+           virtual ~Character(){};
     };
 
 }

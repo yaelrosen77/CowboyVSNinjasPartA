@@ -11,9 +11,17 @@ double Point :: distance(const Point& other) const{
 }
 
 void Point :: print() const{
-    return;
+    // return;
 }
 
-Point Point :: moveTowards(Point& source, Point& dest, double dist){
-    return *this;
+Point moveTowards(Point& source, Point& dest, double dist){
+    return Point(1,0);
+}
+
+double Point:: getX() const{
+    return x_;
+}
+     
+double Point:: getY() const{
+    return y_;
 }

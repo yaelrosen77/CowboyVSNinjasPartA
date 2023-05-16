@@ -1,12 +1,12 @@
 #include "Cowboy.hpp"
 using namespace ariel;
 
-Cowboy :: Cowboy(Point& location, string& name):Character(location,name){
+Cowboy :: Cowboy(string name, Point location):Character(name, location){
     Bullets_ = 6;
     hitPoints_ = 110;
 }
 
-bool Cowboy :: hasBullets(){
+bool Cowboy :: Cowboy :: hasBullets(){
     return 1;
 }
 
@@ -14,10 +14,14 @@ void Cowboy :: reload(){
     return;
 }
 
-void shoot(Character* enemy){
+void Cowboy ::shoot(Character* enemy){
     return;
 }
 
 string Cowboy :: print(){
-    return "";
+    return name_;
+}
+
+int Cowboy :: getNumOfBullets(){
+    return 1;
 }

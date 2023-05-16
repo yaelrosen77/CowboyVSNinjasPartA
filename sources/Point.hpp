@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 using namespace std; 
-
 namespace ariel{
 
     class Point{
@@ -12,6 +11,9 @@ namespace ariel{
             Point(double x1, double y1);
             double distance(const Point& other) const;
             void print() const;
-            Point moveTowards(Point& source, Point& dest, double dist);
+            double getX() const;
+            double getY() const;
+            friend Point moveTowards(Point& source, Point& dest, double dist);
 };
+
 }

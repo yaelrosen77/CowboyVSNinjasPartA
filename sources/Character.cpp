@@ -1,7 +1,7 @@
 #include "Character.hpp"
 using namespace ariel;
 
-Character :: Character(Point& location, string& name):
+Character :: Character(string name, Point location):
     location_(location),name_(name){}
 
 void Character :: hit(int hits){
@@ -18,10 +18,6 @@ string Character :: getName() const{
 
 Point Character :: getLocation() const{
     return location_;
-}
-
-string Character:: print(){
-    return;
 }
 
 bool Character :: isAlive() const{

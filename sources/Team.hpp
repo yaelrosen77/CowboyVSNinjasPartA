@@ -10,7 +10,7 @@ using namespace std;
 
 namespace ariel{
     class Team{
-        vector <Character*> warriors();
+        vector <Character*> warriors;
         Character* leader;
 
         public:
@@ -19,23 +19,18 @@ namespace ariel{
             void attack(Team* enemies);
             int stillAlive();
             void print() const;
-            ~Team();
+            virtual ~Team();
     };
 
     class Team2 : public Team{
-        void add(Character* mate) override;
-    };
-
-    class SmartTeam : public Team{
+        public: 
+        Team2(Character* leader):Team(leader){}
         void add(Character* mate) override;
     };
     
-    class Team1{
-
+    class SmartTeam : public Team{
+        public:
+        SmartTeam(Character* leader):Team(leader){}
+        void add(Character* mate) override;
     };
-
-    class SmartTeam{
-
-    };
-
 }
