@@ -14,7 +14,7 @@ void Point :: print() const{
     // return;
 }
 
-Point moveTowards(Point& source, Point& dest, double dist){
+Point ariel :: moveTowards(Point& source, Point& dest, double dist){
     return Point(1,0);
 }
 
